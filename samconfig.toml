@@ -9,8 +9,6 @@ capabilities = "CAPABILITY_IAM"
 parameter_overrides = "Stage=\"default\""
 image_repositories = []
 confirm_changeset = true
-# add s3_bucket
-s3_bucket = aws-sam-cli-managed-default-samclisourcebucket-mtxyzh43wess
 resolve_s3 = true
 
 [staging]
