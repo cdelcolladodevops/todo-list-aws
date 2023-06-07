@@ -10,6 +10,7 @@ parameter_overrides = "Stage=\"default\""
 image_repositories = []
 confirm_changeset = true
 s3_bucket = aws-sam-cli-managed-default-samclisourcebucket-mtxyzh43wess
+resolve_s3 = true
 
 [staging]
 [staging.deploy]
