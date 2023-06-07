@@ -4,7 +4,7 @@ import unittest
 from urllib.request import urlopen
 import requests
 import json
-import bandit
+
 import pytest
 
 BASE_URL = os.environ.get("BASE_URL")
