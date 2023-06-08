@@ -38,6 +38,24 @@ pipeline {
                 echo 'Initiating Deployment'
                 sh "bash pipelines/common-steps/deploy.sh"
             }
+             }
+        stage ('Coverage')
+        {
+            steps
+            {
+                catcherror(buildResult: 'UNSTABLE', stageResult: 'FAILURE'){
+                    cobertura coberturaReportFile: 'coverage.xml', lineCoverageTargets: '100,80,90', failUnstable: false, onlyStable: false
+                    }
+                    script
+                    {
+                        catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE'} {
+                            if (currentBuild.result == 'UNSTABLE'}
+                                error(==)
+                        }
+                    }
+                }
+                   
+            }
         }
         stage('Integration Test after deploy'){
             steps{
